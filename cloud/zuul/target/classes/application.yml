@@ -1,0 +1,23 @@
+server:
+  port: 9000
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+spring:
+  application:
+    name: zuul-service
+logging:
+  level:
+    web: trace
+    sql: debug
+ribbon:
+  ReadTimeout: 3000
+  ConnectTimeout: 3000
+zuul:
+  routes:
+    order-service: /apigateway/order/**
+    product-service: /apigateway/product/**
+  ignored-patterns: /*-service/**
+
+

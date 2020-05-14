@@ -1,0 +1,29 @@
+server:
+  port: 9100
+spring:
+  application:
+    name: config-server
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          username: zhaixiaowei164205
+#          password: zxc164205
+#          uri: https://code.aliyun.com/zhaixiaowei164205/cloud.git
+#          timeout: 5
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/weijiang164205/config.git
+          username: 164205222@qq.com
+          password: zxc164205
+          timeout: 5
+          default-label: master
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+logging:
+  level:
+    web: trace
